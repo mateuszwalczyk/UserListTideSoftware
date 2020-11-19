@@ -1,0 +1,16 @@
+﻿@page "{userId}"
+@model UserList.Pages.Users.DeleteModel
+@{
+
+}
+
+
+<h2>Usuwanie</h2>
+<div class="alert alert-danger">
+    Czy na pewno chcesz usunąć @Model.User.Name @Model.User.Surname?
+</div>
+<form method="post">
+    <button type="submit" class="btn btn-danger">Tak</button>
+    <a asp-page="List" class="btn btn-dark">Nie</a>
+</form>
+

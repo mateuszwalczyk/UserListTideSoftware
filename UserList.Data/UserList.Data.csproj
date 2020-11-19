@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Telerik.UI.for.AspNet.Core.Trial" Version="2020.3.1118" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UserList.Core\UserList.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,32 @@
+﻿@page "{userId:int}"
+@model UserList.Pages.Users.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+
+<h2> @Model.User.Name @Model.User.Surname</h2>
+<div>
+    Id: @Model.User.Id
+</div>
+<div>
+    Kraj: @Model.User.Country
+</div>
+<div>
+    Email: @Model.User.Email
+</div>
+<div>
+    Urodziny: @Html.DisplayFor(model => model.User.DateOfBirthday)
+</div>
+<div>
+    Płeć: @Model.User.Gender
+</div>
+
+
+
+
+<a asp-page="./List" class="btn btn-dark">Lista Użytkowników</a>

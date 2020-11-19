@@ -1,0 +1,27 @@
+﻿@page
+@model UserList.Pages.Calendar.CalendarModel
+@{
+    ViewData["Title"] = "Calendar";
+}
+
+<h4>Kalendarz</h4>
+
+@(Html.Kendo().Calendar()
+      .Name("calendar")
+      .Events(e => e
+          .Change("calendar_change")
+          .Navigate("calendar_navigate")
+      )
+    )
+<script>
+        function calendar_navigate(e) {
+            // Handle the navigate event.
+            var calendar = e.sender;
+        }
+
+        function calendar_change(e) {
+            // Alerts the selected date with kendo.alert().
+            var calendar = e.sender;
+            kendo.alert(calendar.value());
+        }
+</script>

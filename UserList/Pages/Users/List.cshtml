@@ -1,0 +1,51 @@
+﻿@page
+@model UserList.Pages.Users.ListModel
+@{
+}
+
+<h1>Lista użytkowników</h1>
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span>
+                <button class="btn btn-dark">
+                    <i class="fas fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    @foreach (var user in Model.Users)
+    {
+        <tr>
+            <td>@user.Name</td>
+            <td>@user.Surname</td>
+            <td>@user.Country</td>
+            <td>
+                <a class="btn"
+                   asp-page="./Detail"
+                   asp-route-userId="@user.Id">
+                    <i class="fas fa-search-plus"></i>
+                </a>
+                <a class="btn"
+                   asp-page="./Edit"
+                   asp-route-userId="@user.Id">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a class="btn"
+                   asp-page="./Delete"
+                   asp-route-userId="@user.Id">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-page=".\Edit" class="btn btn-dark">Dodaj nowego użytkownika</a>
+
+<div>@Model.Message</div>
